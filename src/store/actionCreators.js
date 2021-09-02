@@ -20,12 +20,3 @@ export const init_list_action=(data)=>({
 	data
 })
 
-export const getTodoList=()=>{
-	return(dispatch) => {
-		axios.get('/todolist.json').then((res)=>{
-			const data=res.data;
-			const action =init_list_action(data);		 
-			dispatch(action);			
-		})		
-	}
-}
