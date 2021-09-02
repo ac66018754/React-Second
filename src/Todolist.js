@@ -6,7 +6,7 @@ import TodolistUI from './TodolistUI';
 import axios from 'axios';
 
 //import {ADD,INPUT_CHANGE,DELETEITEM,INIT_LIST_ACTION} from './store/actionTypes.js'; 
-import {getInputGhangeAction,getAddAction,getDeleteAction,init_list_action} from './store/actionCreators.js';
+import {getInputGhangeAction,getAddAction,getDeleteAction,getInitList} from './store/actionCreators.js';
 
 class Todolist extends Component{
 
@@ -32,11 +32,16 @@ class Todolist extends Component{
 		)
 	}
 	componentDidMount(){
-		axios.get('/todolist.json').then((res)=>{
-			const data=res.data;
-			const action =init_list_action(data);		 
-			store.dispatch(action);			
-		})			
+
+		const action =getInitList();
+		store.dispatch(action);
+		console.log(action);
+
+		// axios.get('/todolist.json').then((res)=>{
+		// 	const data=res.data;
+		// 	const action =init_list_action(data);		 
+		// 	store.dispatch(action);			
+		// })			
 		
 		
 		// axios.get('/todolist.json').then((res)=>{

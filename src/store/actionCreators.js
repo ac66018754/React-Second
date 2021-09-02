@@ -1,4 +1,4 @@
-import {ADD,INPUT_CHANGE,DELETEITEM,INIT_LIST_ACTION} from './actionTypes.js';
+import {ADD,INPUT_CHANGE,DELETEITEM,INIT_LIST_ACTION,GET_INIT_LIST} from './actionTypes.js';
 import axios from 'axios';
 
 export const getInputGhangeAction=(value)=>({
@@ -19,4 +19,9 @@ export const init_list_action=(data)=>({
 	type:INIT_LIST_ACTION,
 	data
 })
+//()=>()函數 {}對象
 
+export const getInitList =()=>({
+	type:GET_INIT_LIST
+
+	})
